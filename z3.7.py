@@ -5,6 +5,7 @@
 '''
 MAC = 'AAAA:BBBB:CCCC'
 mac = MAC.split(':')
+print(mac)
 new_mac = "".join(mac)
 print(new_mac)
 print(bin(int(new_mac, 16)))

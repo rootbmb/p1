@@ -14,5 +14,5 @@ word_list = ['python', 'ruby', 'perl',
              'ruby', 'perl', 'python', 'ruby', 'perl']
 new_num_list = "".join(str(num_list))
 print(num_list)
-print(num_list.index(10, [-1]))
+print(num_list.index(10))
 # print(num_list.find(str(10)))
