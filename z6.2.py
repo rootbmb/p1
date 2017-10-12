@@ -9,18 +9,13 @@
 '''
 from sys import argv
 file = argv[1]
-print(type(file))
-a = []
+new_file = []
 with open(file) as f:
-    #new_file = f.read()
-    #new_file = new_file.split('\n')
-
     for line in f:
-        line = line.replace('!', '')
-        line = line.replace('\n', '')
-        a.append(line)
-    print(a)
-    for i in a:
-
-        print(i.rstrip())
-    # print(new_file)
+        line = line.strip('!').strip('\n').rstrip()
+        new_file.append(line)
+    for line in new_file:
+        if line == '':
+            continue
+        else:
+            print(line)

@@ -28,9 +28,9 @@ print('{}:{:>17}\n{}:{:>27}\n{}:{:>18}\n{}:{:>22}\n{}:{:>15}\n{}:{:>18}\n'
           AttributProtocol[0], ospf_route1[AttributProtocol[0]],
           AttributProtocol[1], ospf_route1[AttributProtocol[1]],
           AttributProtocol[2], ospf_route1[AttributProtocol[2]
-                                           ].replace('[', '').replace(']', ''),
+                                           ].strip('[]'),
           AttributProtocol[3], ospf_route1[AttributProtocol[3]
-                                           ].replace(',', ''),
+                                           ].strip(','),
           AttributProtocol[4], ospf_route1[AttributProtocol[4]
-                                           ].replace(',', ''),
+                                           ].strip(','),
           AttributProtocol[5], ospf_route1[AttributProtocol[5]]))
