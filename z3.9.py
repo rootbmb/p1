@@ -8,11 +8,14 @@
 элементах.
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 '''
-
-num_list = [10, 2, 30, 100, 10, 50, 11, 30, 15, 7]
+num_list = [10, 2, 30, 100, 10, 50, 11, 30]
 word_list = ['python', 'ruby', 'perl',
              'ruby', 'perl', 'python', 'ruby', 'perl']
-new_num_list = "".join(str(num_list))
-print(num_list)
-print(num_list.index(10))
-# print(num_list.find(str(10)))
+
+find_int = int(input('Enter the element from "num_list": '))
+last_index = len(num_list) - 1 - num_list[::-1].index(find_int)
+print('Last index of the element ', find_int, ' is ', last_index)
+
+find_word = input('Enter the element from "word_list": ')
+last_index = len(word_list) - 1 - word_list[::-1].index(find_word)
+print('Last index of the element ', find_word, ' is ', last_index)
