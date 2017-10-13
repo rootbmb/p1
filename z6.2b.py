@@ -11,20 +11,12 @@ ignore = ['duplex', 'alias', 'Current configuration']
 from sys import argv
 
 ignore = ['duplex', 'alias', 'Current configuration']
-
-file = argv[1]
-new_file = []
-with open(file) as f:
-    for line in f:
-        line = line.strip('\n').rstrip()
-        new_file.append(line)
-    for line in new_file:
-        for i in ignore:
-            if line.strip().startswith(i):
-                new_file.remove(line)
-    for line in new_file:
-        if line == '':
-            continue
+file_out = 'config_sw1_cleared.txt'
+file_in = argv[1]
+with open(file_in) as src, open(file_out, 'a') as dst:
+    for line in src:
+        for ig in ignore:
+            if ig in line:
+                break
         else:
-            file_out = open('config_sw1_cleared.txt', 'a')
-            file_out.write(line + '\n')
+            dst.write(line)

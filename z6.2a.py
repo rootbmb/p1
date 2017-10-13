@@ -11,20 +11,12 @@
 from sys import argv
 
 ignore = ['duplex', 'alias', 'Current configuration']
-
-file = argv[1]
-new_file = []
-nl = []
-with open(file) as f:
-    for line in f:
-        line = line.strip('!').strip('\n').rstrip()
-        new_file.append(line)
-    for line in new_file:
-        for i in ignore:
-            if line.strip().startswith(i):
-                new_file.remove(line)
-    for line in new_file:
-        if line == '':
-            continue
-        else:
-            print(line)
+file_in = argv[1]
+with open(file_in) as src:
+    for line in src:
+        if not line.startswith('!'):
+            for ig in ignore:
+                if ig in line:
+                    break
+            else:
+                print(line.rstrip())

@@ -1,7 +1,9 @@
-a = [172, 16, 10, 20]
-c = []
-for i in a:
+from sys import argv
 
-    b = ('{:x}').format(i)
-    c.append(b)
-print(c)
+filename = argv[1]
+ignore = ['duplex', 'alias', 'Current configuration']
+
+with open(filename, 'r') as f:
+    for line in f:
+        if not line.startswith('!'):
+            print(line.rstrip())
